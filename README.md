@@ -796,6 +796,131 @@ cidades = ["Campinas", "BHte", "João Pessoa"]
 dados = list(zip(nomes, idades, cidades))
 
 print(dados)
-
 # output: [('Raul', 32, 'Campinas'), ('Bia', 25, 'BHte'), ('José', 28, 'João Pessoa')]
+```
+
+# Gráficos
+Ao encontrar os valores, é importante se atentar a maneira que os dados serão exibidos. Para fazer isso existem diversas ferramentas, desde ggplot2 que é um framework de Python, até ferramentas mais completas como Tableu e Power BI. Aqui os exemplos serão baseados em Matplotlib, ferramenta nativa do Python.
+
+Configurando o **Matplotlib**
+
+```python
+python -m pip install matplotlib
+from matplotlib import pyplot as plt
+```
+
+## Barras
+Um gráfico de barras é uma ótima maneira de exibir dados categóricos com diferentes abordagens.
+
+Exemplo dos tipos de gráficos de barra:
+
+<img src="./assets/gbarras.jpg" alt="Exemplo de imagem" width="95%" height="600px">
+
+Exemplo com um gráfico específico:
+
+<img src='./assets/grafico-barras-3.webp' alt='Gráfico' width='95%' height='600px'>
+
+Convertido em código
+```python
+from matplotlib import pyplot as plt
+
+# Valores axis x e y
+items = ['Femininas', 'Masculinas', 'Infantis', 'Cama, Mesa e Banho']
+quantidade = [790, 500, 610, 410]
+
+# Declaração de gráfico e labels
+plt.bar(range(len(items)), quantidade)
+plt.title('Número de vendas em uma loja')
+plt.ylabel('Vendas em Janeiro')
+plt.xticks(range(len(items)), items)
+
+# linhas horizontais
+ax = plt.gca()
+ax.yaxis.grid()
+```
+
+## Linhas
+O mais importante do gráfico de linha são as escalas, pois é usado para representar tendências. Porém é importante demonstrar a escala real.
+
+<img src="./assets/glines.jpg" alt="Exemplo de imagem" width="95%" height="600px">
+
+Exemplo em código:
+```python
+from matplotlib import pyplot as plt
+
+# Conjuntos com os valores
+years = [2015, 2016, 2017, 2018, 2019]
+green = [18000, 13000, 14200, 11000, 15000]
+
+# Criando a tabela
+plt.plot(years, green, color='b', marker='o', linestyle='solid')
+
+# Definindo os estilos
+plt.title('Faturamento da Empresa')
+plt.ylabel('Faturamento')
+plt.xlabel('Ano')
+plt.grid(color='black', linestyle='-', linewidth=0.5)
+```
+
+## Dispersão
+Os gráficos de dispersão são úteis para representar a relação entre duas variáveis distintas.
+
+<img src="./assets/gdispersao.png" alt="Exemplo de imagem" width="95%" height="600px">
+
+Exemplo em código:
+```python
+friends = [70, 65, 72, 63, 71, 64, 60, 64, 67]
+minutes = [175, 170, 205, 120, 220, 130, 105, 145, 190]
+labels = ['Alpha', 'Beta', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Goat', 'Heineken', 'Intel']
+
+plt.scatter(friends, minutes)
+
+for label, friend_count, minute_count in zip(labels, friends, minutes):
+ plt.annotate(label, 
+  xy=(friend_count, minute_count),
+  xytext=(5, -5),
+  textcoords='offset points')
+```
+
+## Histograma
+Um histograma é uma espécie de gráfico de barras que demonstra uma distribuição de frequências. No histograma, a base de cada uma das barras representa uma classe e a altura representa a quantidade ou frequência absoluta com que o valor de cada classe ocorre. Ao mesmo tempo, ele pode ser utilizado como um indicador de dispersão de processos.
+
+<img src="./assets/histograma.webp" alt="Exemplo de imagem" width="95%" height="600px">
+
+Exemplo em código, representando a frequência que números aparecem de 0 a 10 a partir de uma criação aleatória:
+```python
+import matplotlib.pyplot as plt
+import random
+
+# Criando números aleatórios
+data = [random.randint(0, 10) for _ in range(20)]
+
+# Crianndo o gráfico e definindo as escalas dos eixos
+plt.hist(data, bins=10, range=(1, 10))
+
+# Configurações de Labels
+plt.title("Histogram of Random Data")
+plt.xlabel("Escala")
+plt.ylabel("Frequência")
+plt.show()
+```
+
+## Boxplot
+Ao pegarmos um gráfico de barra, sabemos que o comparativo feito é entre a média de cada grupo de informações, com tamanhos diferentes baseados no desvio padrão. Já os gráficos Box Plot, os grupos são divididos entre Quartil 1, mediana e Quartil 3 - definidos dentro dos 100% de amplitude dos dados.
+
+<img src="./assets/bloxpot.png" alt="Exemplo de imagem" width="95%" height="600px">
+
+Exemplo em código:
+```python
+import matplotlib.pyplot as plt
+import random
+
+# data to be plotted
+data = [random.randint(0, 100) for _ in range(20)]
+
+# create the boxplot
+plt.boxplot(data)
+
+# show the plot
+plt.show()
 ```

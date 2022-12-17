@@ -1,5 +1,14 @@
-**INDEX**
-- [Placeholder]()
+# Index
+- [Comentários](#comentários)
+- [Operadores](#operadores)
+- [Identificadores](#identificadores)
+- [Tipos de Dados](#tipos-de-dados)
+- [Coleções de Dados](#coleção-de-dados)
+- [Conversão de dados](#type-casting)
+- [Condicionais](#condicionais)
+- [Laços de Repetição](#loops)
+- [Funções](#functions)
+- [Métodos](#métodos-python)
 
 # Introdução
 Idealizada e desenvolvida por Guido Van Rossum, matemático holandês, no início dos anos 90, o Python foi criado com o objetivo de otimizar a leitura de códigos e estimular a produtividade de quem os cria, seja este um programador ou qualquer outro profissional - ou seja, focado na resolução de problemas.
@@ -53,6 +62,8 @@ car_type = "SUV"
 """
 ```
 Assim como toda linguagem de programação, Python tem caracteres e palavras reservadas. Visto que o sinal de ‘#’ é reservado para comentários, existem várias palavras que terão o mesmo comportamento com usabilidades diferentes.
+
+[VOLTAR AO TOPO](#index)
 
 # Operadores
 ## Operadores aritméticos
@@ -138,6 +149,8 @@ Mais em [Type Coversion](#type-coversion)
 | is | Verifica se duas referências apontam para o mesmo objeto | a is b |
 | is not | Verifica se duas referências apontam para diferentes objetos | a is not b |
 
+[VOLTAR AO TOPO](#index)
+
 # Identificadores
 No Python esse é o nome dado para a declaração de Variáveis, Constantes e funções. O identificador deve começar com underscore ou uma letra, o sistema não é capaz de ler identificadores que iniciam com números.
 
@@ -169,6 +182,8 @@ Classes e instâncias, basicamente são tudo aquilo que delcradaos. Sendo objeto
 
 imprimindo valores:
 print(nome_variável)
+
+[VOLTAR AO TOPO](#index)
 
 # Tipos de dados
 Os tipos de dados suportados pelo Python são divididos entre Dados Simples e Dados de Estruturas, os Simples são considerados os dados de informações únicas, como: Inteiro, Real, Boolean e String; pois cada informação será atribuída a um valor. Enquanto os de Estrutura são conjuntos de dados - como Arrays em JS - que irão receber vários valores diferentes, sendo essas estruturas o list, tuple, range, dict.
@@ -301,7 +316,9 @@ TABELA DE OPERADORES APLICADOS A STRING
 | upper() | Retorna uma cópia da string com as letras minúsculas convertidas em maiúsculas | s.upper() |
 | zfill() | Retorna uma cópia da string preenchida com 0s (zeros) à esquerda | s.zfill(8) |
 
-## Coleção de dados
+[VOLTAR AO TOPO](#index)
+
+# Coleção de dados
 ## Listas
 São agrupamentos de dados - como vetores em Java ou Arrays em Javascript - cada valor dentro dele recebe um index, começando pelo número zero. Ou seja o número do index não é o exato mesmo valor da quantidade de tens dentro dele. Ex
 
@@ -382,7 +399,7 @@ tupla_list = (1, 2, 3, [4, 5, 6])
 
 **********************INDEX( ) -********************** Retorna a posição de index do elemento requisitado { se houver mais de um, ele retorna o primeiro, assim como em list }.
 
-### Dicionário
+## Dicionário
 Lembram os um array de objetos - ou JSON -  onde cada campo recebe um nome para cada valor, esse é um comportamento importante já que em Dicionários não recebem index.
 ```python
 # Declaração Dicionarios vazios
@@ -520,16 +537,18 @@ print('Seu nome é {} e ele tem {} anos de idade'.format(nome, idade)) # cacaten
 print(f'Seu nome é {nome} e ele tem {idade} anos de idade') # shorthand com concatenação literal
 ```
 
-# Type Casting - Conversão de dados
-É possível alterar o tipo de um dado e transforma-lo em outro através de métodos de TypeCasting
+[VOLTAR AO TOPO](#index)
 
-### Dados
+# Type Casting
+É possível converter o tipo de dado a partir de métodos TypeCasting
+
+## Dados
 string = srt(true) - retorna um texto “true”
 real = float(”3”) - retorna 3.0
 inteiro = int(”2019”) - retorna a string para um valor numérico
 boolean = bool( “false”) - retorna valor true, visto que qualquer tipo de dado que não for 0 é considerado true 
 
-### Coleções
+## Coleções
 Em LIST são feitas as novas atribuições
 lista[index] = novo valor
 Em TUPLE não são permitidas alterações, **Em casos de necessidade de alteração ou não alteração de coleções, podemos fazer a conversão de tuplas em lista pela função list( ), e de lista para tupla com tuple( ).**
@@ -603,6 +622,8 @@ S = (a * pi * (r**2)) / 360
 print(S)
 ```
 
+[VOLTAR AO TOPO](#index)
+
 # Condicionais
 São declarações de condições para enviar comandos ao sistema para que execute certa função apenas em contextos específicos.
 A syntax das condicionais são baseadas em identação, lendo os blocos de código que não estão juntos a linha inicial. ex:
@@ -618,7 +639,9 @@ else :
     print(f'o valor de y é {y}, portanto é maior')
 ```
 
-# Loops - Comandos de Repetição
+[VOLTAR AO TOPO](#index)
+
+# Loops
 ## While
 O while é o comando utilizado para programar repetições no Python baseadas na avaliação de uma condição. Enquanto a condição for verdadeira, o bloco de comandos interno ao while é repetido. Quando a condição se torna falsa, o bloco de comandos deixa de repetir.
 while (cond):
@@ -689,6 +712,8 @@ lista2  = [num for num in range (1,51) if num % 2 == 0]
 lista2
 ```
 
+[VOLTAR AO TOPO](#index)
+
 # Functions
 São blocos de código que armazenam determinadas ações, para serem executadas quando chamadas. Syntax, de uma função que recebe e imprime valores por argumento.
 ```python
@@ -726,7 +751,9 @@ lambda_func = lambda num, pot: num ** pot
 print(lambda_func(4, 5)
 ```
 
-# Métodos
+[VOLTAR AO TOPO](#index)
+
+# Métodos Python
 São funções do próprio sistema
 
 ## Map( )
@@ -924,3 +951,5 @@ plt.boxplot(data)
 # show the plot
 plt.show()
 ```
+
+[VOLTAR AO TOPO](#index)

@@ -9,6 +9,7 @@
 - [Laços de Repetição](#loops)
 - [Funções](#functions)
 - [Métodos](#métodos-python)
+- [Gráficos](#gráficos)
 
 # Introdução
 Idealizada e desenvolvida por Guido Van Rossum, matemático holandês, no início dos anos 90, o Python foi criado com o objetivo de otimizar a leitura de códigos e estimular a produtividade de quem os cria, seja este um programador ou qualquer outro profissional - ou seja, focado na resolução de problemas.
@@ -826,6 +827,8 @@ print(dados)
 # output: [('Raul', 32, 'Campinas'), ('Bia', 25, 'BHte'), ('José', 28, 'João Pessoa')]
 ```
 
+[VOLTAR AO TOPO](#index)
+
 # Gráficos
 Ao encontrar os valores, é importante se atentar a maneira que os dados serão exibidos. Para fazer isso existem diversas ferramentas, desde ggplot2 que é um framework de Python, até ferramentas mais completas como Tableu e Power BI. Aqui os exemplos serão baseados em Matplotlib, ferramenta nativa do Python.
 
@@ -935,7 +938,7 @@ plt.show()
 ## Boxplot
 Ao pegarmos um gráfico de barra, sabemos que o comparativo feito é entre a média de cada grupo de informações, com tamanhos diferentes baseados no desvio padrão. Já os gráficos Box Plot, os grupos são divididos entre Quartil 1, mediana e Quartil 3 - definidos dentro dos 100% de amplitude dos dados.
 
-<img src="./assets/bloxpot.png" alt="Exemplo de imagem" width="95%" height="600px">
+<img src="./assets/boxplot.png" alt="Exemplo de imagem" width="95%" height="600px">
 
 Exemplo em código:
 ```python
